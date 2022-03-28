@@ -1,1 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "pdf417";
+  src: local("pdf417"), url(./assets/pdf417.ttf) format("svg");
+}

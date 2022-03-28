@@ -1,0 +1,23 @@
+.bshadow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(5px 5px 5px #222222);
+  opacity: 0.5;
+}
+
+// .col-md-8 {
+//   width: 627px !important;
+//   height: 181px !important;
+//   canvas {
+//     transform: translate(-9px, -9px);
+//   }
+// }
+
+// * {
+//   font-family: "pdf417";
+// }
+#htmlData {
+  width: 645px;
+  height: 200px;
+}
