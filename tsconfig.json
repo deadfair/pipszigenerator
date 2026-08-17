@@ -2,6 +2,21 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "path": [
+        "./node_modules/path-browserify"
+      ],
+      "until": [
+        "./node_modules/until/"
+      ],
+      "os":[
+        "./node_modules/os-browserify/browser"
+      ],
+      "url": [
+        "./node_modules/url/"
+      ],
+
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -24,6 +39,7 @@
     ]
   },
   "angularCompilerOptions": {
+    "types" : ["node"],
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,

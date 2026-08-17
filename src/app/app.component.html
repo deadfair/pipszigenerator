@@ -1,5 +1,3 @@
-
-
 <div class="container py-5">
   <h1 class="text-center fw-bold">PIPSZI_GENERATOR</h1>
 </div>
@@ -16,69 +14,117 @@
 
 <div id="htmlData"></div>
 
-
-<div class="container ">
+<div class="container">
   <div class="row mb-3">
     <div class="col-md-4 text-right">
-      <button #open class="btn btn-success btn-block" (click)="openPDF()">1 Léptetés</button>
+      <button #open class="btn btn-success btn-block" (click)="openPDF()">
+        1 Léptetés
+      </button>
     </div>
     <div class="col-md-4 text-right">
-      <button class="btn btn-success btn-block fw-bold" (click)="startCalc()">Start/Pause</button>
+      <button class="btn btn-success btn-block fw-bold" (click)="startCalc()">
+        Start/Pause
+      </button>
     </div>
   </div>
 
-<p>
-  name{{name}}, ervenyessegKezdete:{{ervenyessegKezdete}}, ervenyessegVege:{{ervenyessegVege}},sorszam:{{i}}, crc32:{{currcrc32}}
-</p>
-  <form [formGroup]="pipsziForm" >
+  <p>
+    name{{ name }}, ervenyessegKezdete:{{ ervenyessegKezdete }},
+    ervenyessegVege:{{ ervenyessegVege }},sorszam:{{ i }}, crc32:{{ currcrc32 }}
+  </p>
+  <form [formGroup]="pipsziForm">
     <div class="mb-3">
       <label for="start" class="form-label">KezdőDátum:</label>
-      <input class="form-control" formControlName="start" type="text" placeholder="pl.: 201908011200" id="start" >
+      <input
+        class="form-control"
+        formControlName="start"
+        type="text"
+        placeholder="pl.: 201908011200"
+        id="start"
+      />
     </div>
     <div class="mb-3">
       <label for="end" class="form-label">VégDátum:</label>
-      <input class="form-control" formControlName="end" type="text" placeholder="pl.: 201908011200" id="end" >
+      <input
+        class="form-control"
+        formControlName="end"
+        type="text"
+        placeholder="pl.: 201908011200"
+        id="end"
+      />
     </div>
     <div class="mb-3">
       <label for="name" class="form-label">Név,első x betü:</label>
-      <input class="form-control" formControlName="name" type="text" placeholder="pl.: BUDPSH" id="name" >
+      <input
+        class="form-control"
+        formControlName="name"
+        type="text"
+        placeholder="pl.: BUDPSH"
+        id="name"
+      />
     </div>
     <div class="mb-3">
       <label for="sortbyStart" class="form-label">Kezdő sorszám:</label>
-      <input class="form-control" formControlName="sortbyStart" type="number" placeholder="csak számok" id="sortbyStart" >
+      <input
+        class="form-control"
+        formControlName="sortbyStart"
+        type="number"
+        placeholder="csak számok"
+        id="sortbyStart"
+      />
     </div>
     <div class="mb-3">
       <label for="sortbyEnd" class="form-label">Vég sorszám:</label>
-      <input class="form-control" formControlName="sortbyEnd" type="number" placeholder="csak számok" id="sortbyEnd" >
+      <input
+        class="form-control"
+        formControlName="sortbyEnd"
+        type="number"
+        placeholder="csak számok"
+        id="sortbyEnd"
+      />
     </div>
 
-    <button class=" btn btn-primary  fw-bold" (click)="generatorInit()">INICIALIZÁLÁS</button>
+    <button class="btn btn-primary fw-bold" (click)="generatorInit()">
+      INICIALIZÁLÁS
+    </button>
   </form>
 
+  <!-- oninput="generate2()" -->
+  <!--onchange="generate()" -->
+  <div class="row my-3">
+    <div class="col">
+      <label for="code2" class="form-label text-success fw-bold"
+        >TESZTNEK a PDF417 vonalkódhoz</label
+      >
+      <textarea
+        id="code2"
+        class="form-control"
+        oninput="generate2()"
+        rows="2"
+      ></textarea>
+    </div>
+  </div>
 
-
-      <!-- oninput="generate2()" -->
-      <!--onchange="generate()" -->
-      <div class="row my-3">
-        <div class="col">
-          <label for="code2" class="form-label text-success fw-bold">TESZTNEK a PDF417 vonalkódhoz</label>
-          <textarea id="code2" class="form-control"
-              oninput="generate2()"
-              rows="2"
-          ></textarea>
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col">
-          <label for="code" class="form-label text-danger fw-bold">IDE NE KATTINTS, itt az érték van a PDF417 vonalkódnak</label>
-          <textarea #code id="code" class="form-control mb-2"
-          [(ngModel)] = "value"
-          onclick="generate()"
-          rows="2"
-          ></textarea>
-          <button  class=" btn btn-danger  fw-bold" id="changeIsComplate" (click)="generateComplate()">IDE SE Kattints!!!</button>
-        </div>
-      </div>
+  <div class="row mb-3">
+    <div class="col">
+      <label for="code" class="form-label text-danger fw-bold"
+        >IDE NE KATTINTS, itt az érték van a PDF417 vonalkódnak</label
+      >
+      <textarea
+        #code
+        id="code"
+        class="form-control mb-2"
+        [(ngModel)]="value"
+        onclick="generate()"
+        rows="2"
+      ></textarea>
+      <button
+        class="btn btn-danger fw-bold"
+        id="changeIsComplate"
+        (click)="generateComplate()"
+      >
+        IDE SE Kattints!!!
+      </button>
+    </div>
+  </div>
 </div>
-

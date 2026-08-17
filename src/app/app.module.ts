@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+import { SymbologyType } from 'symbology';
 
 import { AppComponent } from './app.component';
 
@@ -13,7 +14,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     NgxQRCodeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
