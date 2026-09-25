@@ -190,7 +190,7 @@ export function defaultConfig(): AppConfig {
       fileName: 'pipszi_{from}-{to}',
       pagesPerFile: 0,
       compress: true,
-      title: 'PIPSZI',
+      title: '',
     },
   };
 }

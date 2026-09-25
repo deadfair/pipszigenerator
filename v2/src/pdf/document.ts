@@ -237,7 +237,7 @@ export class PdfDocument {
     this.w.writeObject(this.catalogId, '<</Type/Catalog/Pages ' + this.pagesId + ' 0 R>>');
     this.w.writeObject(
       this.infoId,
-      '<</Title ' + pdfString(this.opts.title) +
+      '<<' + (this.opts.title ? '/Title ' + pdfString(this.opts.title) : '') +
         '/Producer (pipszi-generator v2)' +
         '/CreationDate ' + pdfString(pdfDate(new Date())) + '>>',
     );
