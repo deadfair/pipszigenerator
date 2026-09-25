@@ -1,0 +1,20 @@
+{
+  "name": "pipszi-generator-v2",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 4200",
+    "test": "npm run test:build && node test/compat.mjs && node test/variants.mjs && node test/smoke.mjs && node test/verify.mjs test/out.pdf",
+    "test:build": "esbuild test/compat.ts test/variants.ts test/smoke.ts test/verify.ts --bundle --platform=node --format=esm --outdir=test --out-extension:.js=.mjs --log-level=warning"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true
+  }
+}

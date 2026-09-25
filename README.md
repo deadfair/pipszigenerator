@@ -1,27 +1,26 @@
 # PipsziGenerator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+Két verzió él egymás mellett ebben a mappában:
 
-## Development server
+| | |
+|---|---|
+| **[`v2/`](v2/) – az új generátor** | Egy kattintás, és letöltődik a teljes PDF. 2000 lap ~0,5 mp alatt. Minden paraméter állítható (lapméret, vonalkód helye/mérete/forgatása, tetszőleges számú szövegmező, betűtípusok). Vite + TypeScript, futásidejű függőség nélkül. |
+| `src/` – a régi Angular app | Az eredeti, html2canvas + jsPDF alapú, másodpercenként egy lapot renderelő megoldás. Érintetlen, referenciának megmarad. |
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Az új verzió indítása
 
-## Code scaffolding
+```bash
+cd v2
+npm install
+npm run dev        # http://127.0.0.1:4200
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+A részletes elemzés (mi mit csinált a régiben, mit vettem át szó szerint, mi
+lett gyorsabb és miért) a **[`v2/README.md`](v2/README.md)**-ben van.
 
-## Build
+## A régi verzió indítása
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+npm install
+npm start          # ng serve, http://localhost:4200
+```

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PIPSZI generátor v2</title>
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>PIPSZI<span>generátor v2</span></h1>
+      <div class="topbar-actions">
+        <span id="unit-toggle" class="seg" role="group" aria-label="Mértékegység">
+          <button type="button" data-unit="mm" class="active">mm</button>
+          <button type="button" data-unit="px">px @300</button>
+        </span>
+        <button type="button" id="btn-export" class="ghost">Beállítások mentése…</button>
+        <button type="button" id="btn-import" class="ghost">Betöltés…</button>
+        <button type="button" id="btn-reset" class="ghost">Alapértelmezés</button>
+        <input type="file" id="import-file" accept="application/json" hidden />
+      </div>
+    </header>
+
+    <main>
+      <section class="panel" id="settings"><!-- generált űrlap --></section>
+
+      <aside class="panel side">
+        <div class="preview-head">
+          <h2>Előnézet</h2>
+          <label class="inline">
+            Lap
+            <input type="number" id="preview-serial" step="1" />
+          </label>
+          <span class="hint" id="preview-hint">húzd a vonalkódot / szöveget a pozicionáláshoz</span>
+        </div>
+        <div class="preview-wrap">
+          <canvas id="preview"></canvas>
+        </div>
+        <dl class="facts" id="facts"></dl>
+
+        <div class="run">
+          <button type="button" id="btn-generate" class="primary">PDF generálása</button>
+          <button type="button" id="btn-cancel" class="ghost" hidden>Megszakítás</button>
+          <div class="progress" id="progress" hidden>
+            <div class="bar"><i></i></div>
+            <span class="progress-label"></span>
+          </div>
+          <ul class="log" id="log"></ul>
+        </div>
+      </aside>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
